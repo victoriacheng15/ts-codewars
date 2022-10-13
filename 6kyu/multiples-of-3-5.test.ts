@@ -27,7 +27,7 @@ export class Challenge {
   }
 }
 
-describe('square every digit', () => {
+describe('multiple of 3 or 5', () => {
   const cases: [number, number][] = [
     [10, 23],
     [20, 78],
