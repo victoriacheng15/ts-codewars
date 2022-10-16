@@ -28,7 +28,11 @@ export const likes = (a: string[]): string => {
 };
 
 describe('who likes it', () => {
-  const cases: [Array<string>, string][] = [
+  // could write either
+  // [Array<string>, string][]
+  // or
+  // Array<[Array<string>, string]>
+  const cases: Array<[Array<string>, string]> = [
     [[], 'no one likes this'],
     [['Peter'], 'Peter likes this'],
     [['Jacob', 'Alex'], 'Jacob and Alex like this'],
