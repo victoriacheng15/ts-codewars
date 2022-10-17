@@ -19,7 +19,7 @@ jobs:
         node-version: '16.x'
     
     - name: install dependencies
-      run: pnpm ci
+      run: npm ci
       
     - name: Test
-      run: pnpm test
+      run: npm test
