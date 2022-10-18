@@ -22,7 +22,8 @@ jobs:
         version: latest
         run_install: |
           - recursive: true
-            args: [ jest ]
+            args: [--frozen-lockfile]
+          - args: [typescript, jest, ts-jest]
     
     - name: install dependencies
       run: pnpm install
