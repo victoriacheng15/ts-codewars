@@ -8,7 +8,7 @@ jobs:
   lint-format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.5.1
         with:
           node-version: '16.x'
@@ -42,7 +42,7 @@ jobs:
   jest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.5.0
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.5.1
         with:
           node-version: '16.x'
