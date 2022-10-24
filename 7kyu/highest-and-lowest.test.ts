@@ -12,7 +12,7 @@ Output string must be two numbers separated by a single space, and highest numbe
 */
 
 export class Kata {
-  static highAndLow(numbers: string): any {
+  static highAndLow(numbers: string): string {
     const arr = numbers.split(' ').map(Number);
     const max = Math.max(...arr);
     const min = Math.min(...arr);
