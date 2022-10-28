@@ -1,4 +1,4 @@
-name: Jest Test
+name: ci-format-test
 
 on:
   pull_request:
