@@ -9,7 +9,7 @@ Should return: 11 (the only odd number)
 Should return: 160 (the only even number)
 */
 
-export function findOutlier(integers: number[]): any {
+export function findOutlier(integers: number[]): number {
   const oddArr: number[] = [];
   const evenArr: number[] = [];
 
