@@ -21,7 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - name: install dependencies
+      - name: install dependencies and run rome tools
         run: |
           pnpm install --frozen-lockfile
           pnpm rome:apply && pnpm rome:write
@@ -38,7 +38,7 @@ jobs:
           node-version: 16
           cache: "pnpm"
 
-      - name: install dependencies
+      - name: install dependencies and run test
         run: |
           pnpm install --frozen-lockfile
           pnpm test
