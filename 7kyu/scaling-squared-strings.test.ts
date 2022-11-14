@@ -34,32 +34,34 @@ Write function scale(strng, k, v) k and v will be positive integers. If strng ==
 */
 
 export const scale = (s: string, k: number, n: number): string => {
-  if (s === '') return '';
+	if (s === "") {
+		return "";
+	}
 
-  const squaredChar = (word: string) =>
-    [...word].map((char) => char.repeat(k)).join('');
+	const squaredChar = (word: string) =>
+		[...word].map((char) => char.repeat(k)).join("");
 
-  const repeatVertical = (word: string) => new Array(n).fill(word).join('\n');
+	const repeatVertical = (word: string) => new Array(n).fill(word).join("\n");
 
-  return s.split('\n').map(squaredChar).map(repeatVertical).join('\n');
+	return s.split("\n").map(squaredChar).map(repeatVertical).join("\n");
 };
 
-describe('scaling sqaured string', () => {
-  const cases: [string, number, number, string][] = [
-    ['Kj\nSH', 1, 2, 'Kj\nKj\nSH\nSH'],
-    [
-      'abcd\nefgh\nijkl\nmnop',
-      2,
-      3,
-      'aabbccdd\naabbccdd\naabbccdd\neeffgghh\neeffgghh\neeffgghh\niijjkkll\niijjkkll\niijjkkll\nmmnnoopp\nmmnnoopp\nmmnnoopp',
-    ],
-    ['WgaB\nMmIn\nqJwv\nAhho', 2, 1, 'WWggaaBB\nMMmmIInn\nqqJJwwvv\nAAhhhhoo'],
-  ];
+describe("scaling sqaured string", () => {
+	const cases: [string, number, number, string][] = [
+		["Kj\nSH", 1, 2, "Kj\nKj\nSH\nSH"],
+		[
+			"abcd\nefgh\nijkl\nmnop",
+			2,
+			3,
+			"aabbccdd\naabbccdd\naabbccdd\neeffgghh\neeffgghh\neeffgghh\niijjkkll\niijjkkll\niijjkkll\nmmnnoopp\nmmnnoopp\nmmnnoopp",
+		],
+		["WgaB\nMmIn\nqJwv\nAhho", 2, 1, "WWggaaBB\nMMmmIInn\nqqJJwwvv\nAAhhhhoo"],
+	];
 
-  for (const [s, k, v, output] of cases) {
-    it(`should return ${output} when s = ${s}, k = ${k}, and v = ${v}`, () => {
-      const input = scale(s, k, v);
-      expect(input).toBe(output);
-    });
-  }
+	for (const [s, k, v, output] of cases) {
+		it(`should return ${output} when s = ${s}, k = ${k}, and v = ${v}`, () => {
+			const input = scale(s, k, v);
+			expect(input).toBe(output);
+		});
+	}
 });

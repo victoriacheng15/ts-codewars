@@ -29,45 +29,45 @@ For other languages it is not preloaded but you can use the above one if you nee
 */
 
 export function wallpaper(l: number, w: number, h: number): string {
-  const results = [
-    'zero',
-    'one',
-    'two',
-    'three',
-    'four',
-    'five',
-    'six',
-    'seven',
-    'eight',
-    'nine',
-    'ten',
-    'eleven',
-    'twelve',
-    'thirteen',
-    'fourteen',
-    'fifteen',
-    'sixteen',
-    'seventeen',
-    'eighteen',
-    'nineteen',
-    'twenty',
-  ];
-  const need = l * h * 2 + w * h * 2;
-  const roll = 5.2;
-  const buffer = 1.15;
-  return results[Math.ceil((need * buffer) / roll)];
+	const results = [
+		"zero",
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine",
+		"ten",
+		"eleven",
+		"twelve",
+		"thirteen",
+		"fourteen",
+		"fifteen",
+		"sixteen",
+		"seventeen",
+		"eighteen",
+		"nineteen",
+		"twenty",
+	];
+	const need = l * h * 2 + w * h * 2;
+	const roll = 5.2;
+	const buffer = 1.15;
+	return results[Math.ceil((need * buffer) / roll)];
 }
 
-describe('wallpaper', () => {
-  const cases: [number, number, number, string][] = [
-    [6.3, 4.5, 3.29, 'sixteen'],
-    [6.3, 5.8, 3.13, 'seventeen'],
-    [6.1, 2.0, 3.15, 'twelve'],
-  ];
+describe("wallpaper", () => {
+	const cases: [number, number, number, string][] = [
+		[6.3, 4.5, 3.29, "sixteen"],
+		[6.3, 5.8, 3.13, "seventeen"],
+		[6.1, 2.0, 3.15, "twelve"],
+	];
 
-  for (const [l, w, h, output] of cases) {
-    it(`should return ${output} when l = ${l}, w = ${w}, and h = ${h}`, () => {
-      expect(wallpaper(l, w, h)).toBe(output);
-    });
-  }
+	for (const [l, w, h, output] of cases) {
+		it(`should return ${output} when l = ${l}, w = ${w}, and h = ${h}`, () => {
+			expect(wallpaper(l, w, h)).toBe(output);
+		});
+	}
 });

@@ -26,25 +26,25 @@ Examples
 // };
 
 export const digitalRoot = (n: number): number => {
-  if (n < 10) return n;
+	if (n < 10) return n;
 
-  const sum = [...`${n}`].reduce((acc, num) => acc + Number(num), 0);
-  return digitalRoot(sum);
+	const sum = [...`${n}`].reduce((acc, num) => acc + Number(num), 0);
+	return digitalRoot(sum);
 };
 
-describe('digital root', () => {
-  type TestCases = Array<number>[];
+describe("digital root", () => {
+	type TestCases = number[][];
 
-  const cases: TestCases = [
-    [16, 7],
-    [942, 6],
-    [456, 6],
-    [493193, 2],
-  ];
+	const cases: TestCases = [
+		[16, 7],
+		[942, 6],
+		[456, 6],
+		[493193, 2],
+	];
 
-  for (const [n, output] of cases) {
-    it(`should return ${output} when n = ${n}`, () => {
-      expect(digitalRoot(n)).toBe(output);
-    });
-  }
+	for (const [n, output] of cases) {
+		it(`should return ${output} when n = ${n}`, () => {
+			expect(digitalRoot(n)).toBe(output);
+		});
+	}
 });

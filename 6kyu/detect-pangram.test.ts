@@ -5,28 +5,28 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 */
 
 export const isPangram = (phrase: string): boolean => {
-  const regex = /[\W\d]/g;
-  const map = new Map();
-  const str = phrase.replace(regex, '').toLowerCase();
+	const regex = /[\W\d]/g;
+	const map = new Map();
+	const str = phrase.replace(regex, "").toLowerCase();
 
-  for (const char of str) {
-    map.set(char, 1);
-  }
+	for (const char of str) {
+		map.set(char, 1);
+	}
 
-  return map.size === 26;
+	return map.size === 26;
 };
 
-describe('detect pangram', () => {
-  type TestCases = Array<[string, boolean]>;
+describe("detect pangram", () => {
+	type TestCases = [string, boolean][];
 
-  const cases: TestCases = [
-    ['The quick brown fox jumps over the lazy dog.', true],
-    ['This is not a pangram.', false],
-  ];
+	const cases: TestCases = [
+		["The quick brown fox jumps over the lazy dog.", true],
+		["This is not a pangram.", false],
+	];
 
-  for (const [phrase, output] of cases) {
-    it(`should return ${output} when phrase = ${phrase}`, () => {
-      expect(isPangram(phrase)).toBe(output);
-    });
-  }
+	for (const [phrase, output] of cases) {
+		it(`should return ${output} when phrase = ${phrase}`, () => {
+			expect(isPangram(phrase)).toBe(output);
+		});
+	}
 });

@@ -21,21 +21,21 @@ Examples
 */
 
 export default function isSquare(n: number): boolean {
-  return Number.isInteger(Math.sqrt(n));
+	return Number.isInteger(Math.sqrt(n));
 }
 
-describe('is square', () => {
-  type TestCases = Array<[number, boolean]>;
-  const cases: TestCases = [
-    [-1, false],
-    [0, true],
-    [25, true],
-    [26, false],
-  ];
+describe("is square", () => {
+	type TestCases = [number, boolean][];
+	const cases: TestCases = [
+		[-1, false],
+		[0, true],
+		[25, true],
+		[26, false],
+	];
 
-  for (const [n, output] of cases) {
-    it(`should return ${output} when n = ${n}`, () => {
-      expect(isSquare(n)).toBe(output);
-    });
-  }
+	for (const [n, output] of cases) {
+		it(`should return ${output} when n = ${n}`, () => {
+			expect(isSquare(n)).toBe(output);
+		});
+	}
 });

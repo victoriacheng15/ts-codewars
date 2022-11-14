@@ -31,37 +31,37 @@ Write a function dirReduc which will take an array of strings and returns an arr
 */
 
 export function dirReduc(arr: string[]): string[] {
-  interface Opposites {
-    [key: string]: string;
-  }
+	interface Opposites {
+		[key: string]: string;
+	}
 
-  const opposites: Opposites = {
-    NORTH: 'SOUTH',
-    EAST: 'WEST',
-    SOUTH: 'NORTH',
-    WEST: 'EAST',
-  };
+	const opposites: Opposites = {
+		NORTH: "SOUTH",
+		EAST: "WEST",
+		SOUTH: "NORTH",
+		WEST: "EAST",
+	};
 
-  const stack = [];
+	const stack = [];
 
-  for (const dir of arr) {
-    opposites[dir] === stack[stack.length - 1] ? stack.pop() : stack.push(dir);
-  }
+	for (const dir of arr) {
+		opposites[dir] === stack[stack.length - 1] ? stack.pop() : stack.push(dir);
+	}
 
-  return stack;
+	return stack;
 }
 
-describe('direction reduction', () => {
-  type TestCases = Array<[string[], string[]]>;
+describe("direction reduction", () => {
+	type TestCases = [string[], string[]][];
 
-  const cases: TestCases = [
-    [['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST'], ['WEST']],
-    [['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH'], []],
-  ];
+	const cases: TestCases = [
+		[["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"], ["WEST"]],
+		[["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"], []],
+	];
 
-  for (const [arr, output] of cases) {
-    it(`should return ${output || []} when arr = [${arr}]`, () => {
-      expect(dirReduc(arr)).toEqual(output);
-    });
-  }
+	for (const [arr, output] of cases) {
+		it(`should return ${output || []} when arr = [${arr}]`, () => {
+			expect(dirReduc(arr)).toEqual(output);
+		});
+	}
 });
