@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:check": "eslint . --ext .ts",
-    "lint:fix": "eslint . --fix --ext .ts",
-    "format:check": "prettier --check '**/*.ts'",
-    "format:fix": "prettier --write '**/*.ts'",
-    "test": "jest"
+    "test": "jest",
+    "rome:check": "pnpm exec rome check */*.ts",
+    "rome:apply": "pnpm exec rome check */*.ts --apply",
+    "rome:format": "pnpm exec rome format */*.ts",
+    "rome:write": "pnpm exec rome format */*.ts --write"
   },
   "keywords": [],
   "author": "",
