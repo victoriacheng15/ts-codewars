@@ -12,35 +12,35 @@ Examples
 */
 
 export const findOdd = (xs: number[]): number => {
-  let result = 0;
-  if (xs.length === 1) return xs[0];
-  const counts = new Map();
+	let result = 0;
+	if (xs.length === 1) return xs[0];
+	const counts = new Map();
 
-  for (const num of xs) {
-    counts.set(num, counts.get(num) + 1 || 1);
-  }
+	for (const num of xs) {
+		counts.set(num, counts.get(num) + 1 || 1);
+	}
 
-  for (const [num, count] of counts) {
-    if (count % 2 !== 0) result = num;
-  }
+	for (const [num, count] of counts) {
+		if (count % 2 !== 0) result = num;
+	}
 
-  return result;
+	return result;
 };
 
-describe('find the odd init', () => {
-  type TestCases = Array<[Array<number>, number]>;
+describe("find the odd init", () => {
+	type TestCases = [number[], number][];
 
-  const cases: TestCases = [
-    [[20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5], 5],
-    [[1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5], -1],
-    [[20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5], 5],
-    [[10], 10],
-  ];
+	const cases: TestCases = [
+		[[20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5], 5],
+		[[1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5], -1],
+		[[20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5], 5],
+		[[10], 10],
+	];
 
-  for (const [xs, output] of cases) {
-    it(`should return ${output} when xs = [${xs}]`, () => {
-      const input = findOdd(xs);
-      expect(input).toBe(output);
-    });
-  }
+	for (const [xs, output] of cases) {
+		it(`should return ${output} when xs = [${xs}]`, () => {
+			const input = findOdd(xs);
+			expect(input).toBe(output);
+		});
+	}
 });

@@ -20,24 +20,24 @@ The middle character(s) of the word represented as a string.
 */
 
 export function getMiddle(s: string) {
-  const mid = Math.floor(s.length / 2);
-  const isEvenLength = s.length % 2 === 0;
-  return isEvenLength ? `${s[mid - 1]}${s[mid]}` : `${s[mid]}`;
+	const mid = Math.floor(s.length / 2);
+	const isEvenLength = s.length % 2 === 0;
+	return isEvenLength ? `${s[mid - 1]}${s[mid]}` : `${s[mid]}`;
 }
 
-describe('get middle', () => {
-  type TestCases = string[][];
+describe("get middle", () => {
+	type TestCases = string[][];
 
-  const cases: TestCases = [
-    ['test', 'es'],
-    ['testing', 't'],
-    ['middle', 'dd'],
-    ['A', 'A'],
-  ];
+	const cases: TestCases = [
+		["test", "es"],
+		["testing", "t"],
+		["middle", "dd"],
+		["A", "A"],
+	];
 
-  for (const [s, output] of cases) {
-    it(`should return ${output} when s = ${s}`, () => {
-      expect(getMiddle(s)).toBe(output);
-    });
-  }
+	for (const [s, output] of cases) {
+		it(`should return ${output} when s = ${s}`, () => {
+			expect(getMiddle(s)).toBe(output);
+		});
+	}
 });

@@ -12,25 +12,25 @@ Output string must be two numbers separated by a single space, and highest numbe
 */
 
 export class Kata {
-  static highAndLow(numbers: string): string {
-    const arr = numbers.split(' ').map(Number);
-    const max = Math.max(...arr);
-    const min = Math.min(...arr);
+	static highAndLow(numbers: string): string {
+		const arr = numbers.split(" ").map(Number);
+		const max = Math.max(...arr);
+		const min = Math.min(...arr);
 
-    return `${max} ${min}`;
-  }
+		return `${max} ${min}`;
+	}
 }
 
-describe('highest and lowest', () => {
-  const cases: string[][] = [
-    ['8 3 -5 42 -1 0 0 -9 4 7 4 -4', '42 -9'],
-    ['1 2 3', '3 1'],
-    ['-1 -1 0', '0 -1'],
-  ];
+describe("highest and lowest", () => {
+	const cases: string[][] = [
+		["8 3 -5 42 -1 0 0 -9 4 7 4 -4", "42 -9"],
+		["1 2 3", "3 1"],
+		["-1 -1 0", "0 -1"],
+	];
 
-  for (const [numbers, output] of cases) {
-    it(`should return ${output} when numbers = ${numbers}`, () => {
-      expect(Kata.highAndLow(numbers)).toBe(output);
-    });
-  }
+	for (const [numbers, output] of cases) {
+		it(`should return ${output} when numbers = ${numbers}`, () => {
+			expect(Kata.highAndLow(numbers)).toBe(output);
+		});
+	}
 });

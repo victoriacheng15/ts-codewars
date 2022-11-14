@@ -19,30 +19,30 @@ Note: If the number is a multiple of both 3 and 5, only count it once.
 // }
 
 export class Challenge {
-  static solution(number: number) {
-    let [sum, num] = [0, number - 1];
+	static solution(number: number) {
+		let [sum, num] = [0, number - 1];
 
-    while (num > 0) {
-      if (num % 3 === 0 || num % 5 === 0) {
-        sum += num;
-      }
-      num -= 1;
-    }
+		while (num > 0) {
+			if (num % 3 === 0 || num % 5 === 0) {
+				sum += num;
+			}
+			num -= 1;
+		}
 
-    return sum;
-  }
+		return sum;
+	}
 }
 
-describe('multiple of 3 or 5', () => {
-  const cases: [number, number][] = [
-    [10, 23],
-    [20, 78],
-    [200, 9168],
-  ];
+describe("multiple of 3 or 5", () => {
+	const cases: [number, number][] = [
+		[10, 23],
+		[20, 78],
+		[200, 9168],
+	];
 
-  for (const [n, output] of cases) {
-    it(`should return ${output} when n = ${n}`, () => {
-      expect(Challenge.solution(n)).toBe(output);
-    });
-  }
+	for (const [n, output] of cases) {
+		it(`should return ${output} when n = ${n}`, () => {
+			expect(Challenge.solution(n)).toBe(output);
+		});
+	}
 });

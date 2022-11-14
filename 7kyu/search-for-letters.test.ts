@@ -11,26 +11,26 @@ For instance:
 */
 
 export function change(string: string): string {
-  const result = Array(26).fill(0);
-  const regex = /[^\w]/g;
+	const result = Array(26).fill(0);
+	const regex = /[^\w]/g;
 
-  for (const item of string.toLowerCase().replace(regex, '')) {
-    result[item.charCodeAt(0) - 97] = 1;
-  }
+	for (const item of string.toLowerCase().replace(regex, "")) {
+		result[item.charCodeAt(0) - 97] = 1;
+	}
 
-  return result.join('');
+	return result.join("");
 }
 
-describe('change', () => {
-  const cases: string[][] = [
-    ['a **&  bZ', '11000000000000000000000001'],
-    ['a   **&  cZ', '10100000000000000000000001'],
-    ['abcdefghijklmnopqrstuvwxyz{|}~', '11111111111111111111111111'],
-  ];
+describe("change", () => {
+	const cases: string[][] = [
+		["a **&  bZ", "11000000000000000000000001"],
+		["a   **&  cZ", "10100000000000000000000001"],
+		["abcdefghijklmnopqrstuvwxyz{|}~", "11111111111111111111111111"],
+	];
 
-  for (const [string, output] of cases) {
-    it(`should return ${output} when string = ${string}`, () => {
-      expect(change(string)).toBe(output);
-    });
-  }
+	for (const [string, output] of cases) {
+		it(`should return ${output} when string = ${string}`, () => {
+			expect(change(string)).toBe(output);
+		});
+	}
 });

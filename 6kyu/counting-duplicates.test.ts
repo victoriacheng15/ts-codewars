@@ -13,35 +13,39 @@ Example
 */
 
 export function duplicateCount(text: string): number {
-  if (text === '') { return 0; }
-  let total = 0;
-  const counts = new Map();
+	if (text === "") {
+		return 0;
+	}
+	let total = 0;
+	const counts = new Map();
 
-  for (const char of text.toLowerCase()) {
-    counts.set(char, counts.get(char) + 1 || 1);
-  }
+	for (const char of text.toLowerCase()) {
+		counts.set(char, counts.get(char) + 1 || 1);
+	}
 
-  for (const count of counts.values()) {
-    if (count > 1) { total += 1; }
-  }
+	for (const count of counts.values()) {
+		if (count > 1) {
+			total += 1;
+		}
+	}
 
-  return total;
+	return total;
 }
 
-describe('counting duplicate', () => {
-  type TestCases = [string, number][];
-  const cases: TestCases = [
-    ['', 0],
-    ['abcde', 0],
-    ['aabbcde', 2],
-    ['aabBcde', 2],
-    ['Indivisibility', 1],
-  ];
+describe("counting duplicate", () => {
+	type TestCases = [string, number][];
+	const cases: TestCases = [
+		["", 0],
+		["abcde", 0],
+		["aabbcde", 2],
+		["aabBcde", 2],
+		["Indivisibility", 1],
+	];
 
-  for (const [text, output] of cases) {
-    it(`should return ${output} for ${text}`, () => {
-      const count = duplicateCount(text);
-      expect(count).toBe(output);
-    });
-  }
+	for (const [text, output] of cases) {
+		it(`should return ${output} for ${text}`, () => {
+			const count = duplicateCount(text);
+			expect(count).toBe(output);
+		});
+	}
 });

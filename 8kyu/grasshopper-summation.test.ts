@@ -11,12 +11,12 @@ summation(8) -> 36
 */
 
 export const summation = (num: number): number => {
-  let total = 0;
-  for (let i = 1; i <= num; i += 1) {
-    total += i;
-  }
+	let total = 0;
+	for (let i = 1; i <= num; i += 1) {
+		total += i;
+	}
 
-  return total;
+	return total;
 };
 
 // export const summation = (num: number): number => {
@@ -28,16 +28,16 @@ export const summation = (num: number): number => {
 //   return (n * (n + 1)) / 2;
 // };
 
-describe('summation', () => {
-  const cases: [number, number][] = [
-    [1, 1],
-    [8, 36],
-    [22, 253],
-  ];
+describe("summation", () => {
+	const cases: [number, number][] = [
+		[1, 1],
+		[8, 36],
+		[22, 253],
+	];
 
-  for (const [num, output] of cases) {
-    it(`should return ${output} when num = ${num}`, () => {
-      expect(summation(num)).toBe(output);
-    });
-  }
+	for (const [num, output] of cases) {
+		it(`should return ${output} when num = ${num}`, () => {
+			expect(summation(num)).toBe(output);
+		});
+	}
 });

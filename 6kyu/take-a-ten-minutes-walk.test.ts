@@ -10,28 +10,28 @@ https://bobbyhadz.com/blog/typescript-reduce-type
 */
 
 export function isValidWalk(walk: string[]): boolean {
-  type Dir = Record<string, number>;
+	type Dir = Record<string, number>;
 
-  if (walk.length !== 10) return false;
-  const dir = walk.reduce<Dir>((acc, direction) => {
-    acc[direction] = (acc[direction] || 0) + 1;
-    return acc;
-  }, {});
+	if (walk.length !== 10) return false;
+	const dir = walk.reduce<Dir>((acc, direction) => {
+		acc[direction] = (acc[direction] || 0) + 1;
+		return acc;
+	}, {});
 
-  return dir.n === dir.s && dir.e === dir.w;
+	return dir.n === dir.s && dir.e === dir.w;
 }
 
-describe('is valid walk', () => {
-  const cases: Array<[string[], boolean]> = [
-    [['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'], true],
-    [['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'], false],
-    [['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'], false],
-    [['w'], false],
-  ];
+describe("is valid walk", () => {
+	const cases: [string[], boolean][] = [
+		[["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"], true],
+		[["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"], false],
+		[["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"], false],
+		[["w"], false],
+	];
 
-  for (const [walk, output] of cases) {
-    it(`should return ${output} when walk = [${walk}]`, () => {
-      expect(isValidWalk(walk)).toBe(output);
-    });
-  }
+	for (const [walk, output] of cases) {
+		it(`should return ${output} when walk = [${walk}]`, () => {
+			expect(isValidWalk(walk)).toBe(output);
+		});
+	}
 });

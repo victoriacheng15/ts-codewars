@@ -9,30 +9,30 @@ spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
 export function spinWords(words: string): string {
-  const arr = words.split(' ');
-  const reverse = (word: string) => {
-    return [...word].reduce((output, char) => {
-      output = char + output;
-      return output;
-    }, '');
-  };
+	const arr = words.split(" ");
+	const reverse = (word: string) => {
+		return [...word].reduce((output, char) => {
+			output = char + output;
+			return output;
+		}, "");
+	};
 
-  const formatWords = (word: string) =>
-    word.length > 4 ? reverse(word) : word;
+	const formatWords = (word: string) =>
+		word.length > 4 ? reverse(word) : word;
 
-  return arr.map(formatWords).join(' ');
+	return arr.map(formatWords).join(" ");
 }
 
-describe('spin words', () => {
-  const cases: string[][] = [
-    ['Hey fellow warriors', 'Hey wollef sroirraw'],
-    ['This is a test', 'This is a test'],
-    ['This is another test', 'This is rehtona test'],
-  ];
+describe("spin words", () => {
+	const cases: string[][] = [
+		["Hey fellow warriors", "Hey wollef sroirraw"],
+		["This is a test", "This is a test"],
+		["This is another test", "This is rehtona test"],
+	];
 
-  for (const [words, output] of cases) {
-    it(`should return ${output} when words = ${words}`, () => {
-      expect(spinWords(words)).toBe(output);
-    });
-  }
+	for (const [words, output] of cases) {
+		it(`should return ${output} when words = ${words}`, () => {
+			expect(spinWords(words)).toBe(output);
+		});
+	}
 });

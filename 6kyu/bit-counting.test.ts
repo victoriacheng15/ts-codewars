@@ -5,20 +5,20 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 */
 
 export function countBits(n: number): number {
-  return [...n.toString(2)].reduce((acc, num) => acc + Number(num), 0);
+	return [...n.toString(2)].reduce((acc, num) => acc + Number(num), 0);
 }
 
-describe('bit counting', () => {
-  const cases = [
-    [0, 0],
-    [4, 1],
-    [7, 3],
-    [9, 2],
-  ];
+describe("bit counting", () => {
+	const cases = [
+		[0, 0],
+		[4, 1],
+		[7, 3],
+		[9, 2],
+	];
 
-  for (const [n, output] of cases) {
-    it(`should return ${output} when n = ${n}`, () => {
-      expect(countBits(n)).toBe(output);
-    });
-  }
+	for (const [n, output] of cases) {
+		it(`should return ${output} when n = ${n}`, () => {
+			expect(countBits(n)).toBe(output);
+		});
+	}
 });

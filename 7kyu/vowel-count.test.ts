@@ -7,21 +7,21 @@ The input string will only consist of lower case letters and/or spaces.
 */
 
 export class Kata {
-  static getCount(str: string): number {
-    const vowelList = 'aeiou'.split('');
-    return [...str].filter((char) => vowelList.includes(char)).length;
-  }
+	static getCount(str: string): number {
+		const vowelList = "aeiou".split("");
+		return [...str].filter((char) => vowelList.includes(char)).length;
+	}
 }
 
-describe('vowel count', () => {
-  const cases: [string, number][] = [
-    ['abracadabra', 5],
-    ['abracadabra', 5],
-  ];
+describe("vowel count", () => {
+	const cases: [string, number][] = [
+		["abracadabra", 5],
+		["abracadabra", 5],
+	];
 
-  for (const [str, output] of cases) {
-    it(`should return ${output} when n = ${str}`, () => {
-      expect(Kata.getCount(str)).toBe(output);
-    });
-  }
+	for (const [str, output] of cases) {
+		it(`should return ${output} when n = ${str}`, () => {
+			expect(Kata.getCount(str)).toBe(output);
+		});
+	}
 });

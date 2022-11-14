@@ -10,24 +10,24 @@ array_diff({1, 2, 2, 2, 3}, 5, {2}, 1, *z) == {1, 3} (z == 2)
 */
 
 export function arrayDiff(a: number[], b: number[]): number[] {
-  if (!a.length) return a;
-  return a.filter((value) => !b.includes(value));
+	if (!a.length) return a;
+	return a.filter((value) => !b.includes(value));
 }
 
-describe('array diff', () => {
-  // type TestCase = Array<[number[], number[], number[]]>;
-  type NumArr = number[];
-  type TestCase = [NumArr, NumArr, NumArr][];
+describe("array diff", () => {
+	// type TestCase = Array<[number[], number[], number[]]>;
+	type NumArr = number[];
+	type TestCase = [NumArr, NumArr, NumArr][];
 
-  const cases: TestCase = [
-    [[], [4, 5], []],
-    [[3, 4], [3], [4]],
-    [[1, 8, 2], [], [1, 8, 2]],
-  ];
+	const cases: TestCase = [
+		[[], [4, 5], []],
+		[[3, 4], [3], [4]],
+		[[1, 8, 2], [], [1, 8, 2]],
+	];
 
-  for (const [a, b, output] of cases) {
-    it(`should return [${output}] when a = [${a}] and b = [${b}]`, () => {
-      expect(arrayDiff(a, b)).toEqual(output);
-    });
-  }
+	for (const [a, b, output] of cases) {
+		it(`should return [${output}] when a = [${a}] and b = [${b}]`, () => {
+			expect(arrayDiff(a, b)).toEqual(output);
+		});
+	}
 });

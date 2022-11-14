@@ -10,26 +10,26 @@ Should return: 160 (the only even number)
 */
 
 export function findOutlier(integers: number[]): number {
-  const oddArr: number[] = [];
-  const evenArr: number[] = [];
+	const oddArr: number[] = [];
+	const evenArr: number[] = [];
 
-  for (const num of integers) {
-    num % 2 === 0 ? evenArr.push(num) : oddArr.push(num);
-  }
+	for (const num of integers) {
+		num % 2 === 0 ? evenArr.push(num) : oddArr.push(num);
+	}
 
-  return evenArr.length === 1 ? evenArr[0] : oddArr[0];
+	return evenArr.length === 1 ? evenArr[0] : oddArr[0];
 }
 
-describe('find outlier', () => {
-  const cases: [number[], number][] = [
-    [[0, 1, 2], 1],
-    [[2, 6, 8, 10, 3], 3],
-    [[2, 4, 0, 100, 4, 11, 2602, 36], 11],
-  ];
+describe("find outlier", () => {
+	const cases: [number[], number][] = [
+		[[0, 1, 2], 1],
+		[[2, 6, 8, 10, 3], 3],
+		[[2, 4, 0, 100, 4, 11, 2602, 36], 11],
+	];
 
-  for (const [integers, output] of cases) {
-    it(`should return ${output} when integers = [${integers}]`, () => {
-      expect(findOutlier(integers)).toBe(output);
-    });
-  }
+	for (const [integers, output] of cases) {
+		it(`should return ${output} when integers = [${integers}]`, () => {
+			expect(findOutlier(integers)).toBe(output);
+		});
+	}
 });
