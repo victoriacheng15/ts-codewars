@@ -15,7 +15,7 @@ export class Kata {
 }
 
 describe('opposite', () => {
-  const cases: Array<number>[] = [
+  const cases: number[][] = [
     [1, -1],
     [14, -14],
     [-34, 34],

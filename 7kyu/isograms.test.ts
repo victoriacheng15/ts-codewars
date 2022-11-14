@@ -10,7 +10,7 @@ export function isIsogram(str: string): boolean {
   const map = new Map();
 
   for (const char of str.toLowerCase()) {
-    if (map.has(char)) return false;
+    if (map.has(char)) { return false; }
 
     map.set(char, 1);
   }
@@ -19,7 +19,7 @@ export function isIsogram(str: string): boolean {
 }
 
 describe('isograms', () => {
-  const cases: Array<[string, boolean]> = [
+  const cases: [string, boolean][] = [
     ['Dermatoglyphics', true],
     ['isogram', true],
     ['aba', false],

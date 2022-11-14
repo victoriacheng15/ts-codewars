@@ -24,7 +24,7 @@ export function spinWords(words: string): string {
 }
 
 describe('spin words', () => {
-  const cases: Array<string>[] = [
+  const cases: string[][] = [
     ['Hey fellow warriors', 'Hey wollef sroirraw'],
     ['This is a test', 'This is a test'],
     ['This is another test', 'This is rehtona test'],

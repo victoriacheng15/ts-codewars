@@ -34,7 +34,7 @@ Write function scale(strng, k, v) k and v will be positive integers. If strng ==
 */
 
 export const scale = (s: string, k: number, n: number): string => {
-  if (s === '') return '';
+  if (s === '') { return ''; }
 
   const squaredChar = (word: string) =>
     [...word].map((char) => char.repeat(k)).join('');

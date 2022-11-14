@@ -52,7 +52,7 @@ export function dirReduc(arr: string[]): string[] {
 }
 
 describe('direction reduction', () => {
-  type TestCases = Array<[string[], string[]]>;
+  type TestCases = [string[], string[]][];
 
   const cases: TestCases = [
     [['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST'], ['WEST']],

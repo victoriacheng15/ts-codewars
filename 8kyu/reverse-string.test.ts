@@ -13,7 +13,7 @@ export function solution(str: string): string {
 }
 
 describe('reverse string', () => {
-  const cases: Array<string[]> = [
+  const cases: string[][] = [
     ['world', 'dlrow'],
     ['hello', 'olleh'],
     ['word', 'drow'],

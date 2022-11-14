@@ -32,7 +32,7 @@ describe('who likes it', () => {
   // [Array<string>, string][]
   // or
   // Array<[Array<string>, string]>
-  const cases: Array<[Array<string>, string]> = [
+  const cases: [string[], string][] = [
     [[], 'no one likes this'],
     [['Peter'], 'Peter likes this'],
     [['Jacob', 'Alex'], 'Jacob and Alex like this'],

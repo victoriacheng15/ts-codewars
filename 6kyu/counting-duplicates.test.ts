@@ -13,7 +13,7 @@ Example
 */
 
 export function duplicateCount(text: string): number {
-  if (text === '') return 0;
+  if (text === '') { return 0; }
   let total = 0;
   const counts = new Map();
 
@@ -22,14 +22,14 @@ export function duplicateCount(text: string): number {
   }
 
   for (const count of counts.values()) {
-    if (count > 1) total += 1;
+    if (count > 1) { total += 1; }
   }
 
   return total;
 }
 
 describe('counting duplicate', () => {
-  type TestCases = Array<[string, number]>;
+  type TestCases = [string, number][];
   const cases: TestCases = [
     ['', 0],
     ['abcde', 0],

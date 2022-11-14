@@ -7,7 +7,7 @@ export const boolToWord = (bool: boolean): string => {
 };
 
 describe("boolean to word", () => {
-  const cases: Array<[boolean, string]> = [
+  const cases: [boolean, string][] = [
     [true, "Yes"],
     [false, "No"],
   ];

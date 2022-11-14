@@ -24,7 +24,7 @@ export function stringTransformer(str: string): string {
 }
 
 describe('string transformer', () => {
-  const cases: Array<string>[] = [
+  const cases: string[][] = [
     ['Example Input', 'iNPUT eXAMPLE'],
     [
       'To be OR not to be That is the Question',

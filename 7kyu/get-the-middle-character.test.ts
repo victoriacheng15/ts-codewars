@@ -26,7 +26,7 @@ export function getMiddle(s: string) {
 }
 
 describe('get middle', () => {
-  type TestCases = Array<string>[];
+  type TestCases = string[][];
 
   const cases: TestCases = [
     ['test', 'es'],

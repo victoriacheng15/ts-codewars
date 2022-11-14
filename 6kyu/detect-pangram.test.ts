@@ -17,7 +17,7 @@ export const isPangram = (phrase: string): boolean => {
 };
 
 describe('detect pangram', () => {
-  type TestCases = Array<[string, boolean]>;
+  type TestCases = [string, boolean][];
 
   const cases: TestCases = [
     ['The quick brown fox jumps over the lazy dog.', true],

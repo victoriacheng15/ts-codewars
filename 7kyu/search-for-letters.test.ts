@@ -22,7 +22,7 @@ export function change(string: string): string {
 }
 
 describe('change', () => {
-  const cases: Array<string>[] = [
+  const cases: string[][] = [
     ['a **&  bZ', '11000000000000000000000001'],
     ['a   **&  cZ', '10100000000000000000000001'],
     ['abcdefghijklmnopqrstuvwxyz{|}~', '11111111111111111111111111'],

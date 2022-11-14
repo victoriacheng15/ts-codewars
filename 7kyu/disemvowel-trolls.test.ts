@@ -18,7 +18,7 @@ export class Kata {
 }
 
 describe('disemvowel trolls', () => {
-  type TestCases = Array<string>[];
+  type TestCases = string[][];
 
   const cases: TestCases = [
     ['This website is for losers LOL!', 'Ths wbst s fr lsrs LL!'],

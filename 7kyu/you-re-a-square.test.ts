@@ -25,7 +25,7 @@ export default function isSquare(n: number): boolean {
 }
 
 describe('is square', () => {
-  type TestCases = Array<[number, boolean]>;
+  type TestCases = [number, boolean][];
   const cases: TestCases = [
     [-1, false],
     [0, true],
