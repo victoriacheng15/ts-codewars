@@ -8,7 +8,8 @@
     "rome:check": "pnpm exec rome check */*.ts",
     "rome:apply": "pnpm exec rome check */*.ts --apply",
     "rome:format": "pnpm exec rome format */*.ts",
-    "rome:write": "pnpm exec rome format */*.ts --write"
+    "rome:write": "pnpm exec rome format */*.ts --write",
+    "rome:ci": "pnpm rome:apply && pnpm rome:write"
   },
   "keywords": [],
   "author": "",
