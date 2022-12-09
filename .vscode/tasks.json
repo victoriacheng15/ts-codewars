@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run rome",
+      "type": "shell",
+      "command": "pnpm rome:ci"
+    }, 
+    {
+      "label": "run jest on only file changes",
+      "type": "shell",
+      "command": "pnpm jest --onlyChanged"
+    },
+    {
+      "label": "update main branch",
+      "type": "shell",
+      "command": "git switch main && git fetch && git fetch origin main"
+    }
+  ]
+}
