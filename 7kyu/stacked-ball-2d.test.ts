@@ -27,12 +27,12 @@ describe("stack height 2d", () => {
 	const cases = [
 		[0, 0],
 		[1, 1.0],
-		[2, 1.886],
+		[2, 1.866],
 	];
 
 	for (const [layers, output] of cases) {
 		it(`should return ${output} when layers = ${layers}`, () => {
-			expect(stackHeight2d(layers)).toBeCloseTo(output);
+			expect(+stackHeight2d(layers).toFixed(3)).toBeCloseTo(+output.toFixed(3));
 		});
 	}
 });
