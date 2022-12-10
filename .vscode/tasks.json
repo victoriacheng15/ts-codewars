@@ -14,7 +14,7 @@
     {
       "label": "update main branch",
       "type": "shell",
-      "command": "git switch main && git fetch && git fetch origin main"
+      "command": "git switch main && git fetch && git pull origin main"
     }
   ]
 }
